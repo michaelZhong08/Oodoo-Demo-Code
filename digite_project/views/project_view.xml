@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--********************* Kanban *******************-->
+    <record id="digite_project_kanban" model="ir.ui.view">
+        <field name="model">digiteproject.project</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id" class="o_kanban_small_column">
+                <!-- Fields -->
+                <field name="stage_id" />
+                <field name="id" />
+                <field name="kanban_color" />
+                <field name="kanban_state" />
+                <field name="priority" />
+ 
+                <!-- Optional progress bar -->
+                <progressbar
+                    field="kanban_state"
+                    colors='{"done": "success", "blocked": "danger"}' />
+                <!-- Templates with HTML snippets to use -->
+                <templates>
+                     <t t-name="kanban-box">
+                        <!-- Set the Kanban Card color -->
+                        <div t-attf-class="
+                            oe_kanban_color_#{kanban_getcolor(record.kanban_color.raw_value)}
+                            oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+                                <!-- Top-right drop down menu here... -->
+                                <a class="dropdown-toggle btn"
+                                    data-toggle="dropdown" role="button"
+                                    aria-label="Dropdown menu"
+                                    title="Dropdown menu"
+                                    href="#">
+                                    <span class="fa fa-ellipsis-v" />
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <!-- Color picker option -->
+                                    <ul class="oe_kanban_colorpicker" data-field="kanban_color" />
+                                </div>
+                            </div>
+                            <div class="oe_kanban_body">
+                                <!-- Content elements and fields go here... -->
+                                <div>
+                                    <strong>
+                                        <a type="open"><field name="project_name" /></a>
+                                    </strong>
+                                </div>
+                                <ul>
+                                    <!--<li><field name="user_id" /></li>-->
+                                    <li t-attf-class="oe_kanban_text_{{
+                                        record.priority.raw_value lt '2'
+                                        ? 'black' : 'red'}}">
+                                        <field name="project_num" />
+                                    </li>
+                                    <li><field name="project_customername" /></li>
+                                </ul>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <!-- Left hand footer... -->
+                                    <field name="priority" widget="priority" />
+                                    <field name="activity_ids" widget="kanban_activity" />
+                                    <div>
+                                        <t t-set="calendar_sign">
+                                            <i class="fa fa-calendar" />
+                                        </t>
+                                        <t t-raw="calendar_sign" />
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_bottom_rught">
+                                    <!-- Right hand footer... -->
+                                    <field name="kanban_state"
+                                        widget="kanban_state_selection" />
+                                </div>
+                            </div>
+                            <div class="oe_clear" />
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!--********************* Tree *******************-->
+    <record id="view_tree_digite_porject" model="ir.ui.view">
+        <field name="name">Digite Project Tree</field>
+        <field name="model">digiteproject.project</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="project_num" />
+                <field name="project_name" />
+                <field name="project_customername" />
+            </tree>
+        </field>
+    </record>
+    <!--********************* Form *******************-->
+    <record id="view_form_digite_porject" model="ir.ui.view">
+        <field name="name">Digite Project Form</field>
+        <field name="model">digiteproject.project</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!--以下仅供查看效果使用-->
+                    <field name="state"
+                        widget="statusbar"
+                        clickable="True"
+                        statusbar_visible="new,open,done" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="project_num" class="oe_edit_only" />
+                        <h1><field name="project_num" /></h1>
+                        <label for="project_name" class="oe_edit_only" />
+                        <h1><field name="project_name" /></h1>
+                    </div>
+                    <group name="group_top">
+                        <group name="group_col1" col="4" colspan="4">
+                            <field name="project_customerid" />
+                            <field name="project_customername" />
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

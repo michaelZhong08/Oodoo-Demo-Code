@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <menuitem id="menu_digite_project" name="Digite Project" />
+
+        <!-- Action to open the Book list -->
+        <act_window id="action_digiteproject_project"
+            name="Digite Project Info Action"
+            res_model="digiteproject.project"
+            view_mode="kanban,tree,form"
+        />
+         <!-- Menu item to open the Book list -->
+        <menuitem id="menu_digiteproject_project"
+            name="Digite Project Info Menu"
+            parent="menu_digite_project"
+            action="action_digiteproject_project"
+        />
+
+    </data>
+</odoo>

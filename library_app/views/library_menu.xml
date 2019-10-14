@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <menuitem id="menu_library" name="Library" />
+
+        <!-- Action to open the Book list -->
+        <act_window id="action_library_book"
+            name="Library Books"
+            res_model="library.book"
+            view_mode="tree,form"
+        />
+         <!-- Menu item to open the Book list -->
+        <menuitem id="menu_library_book"
+            name="Books"
+            parent="menu_library"
+            action="action_library_book"
+        />
+
+        <!-- Action to open the Book list -->
+        <act_window id="action_library_book_catetory"
+            name="Library Books Category"
+            res_model="library.book.category"
+            view_mode="tree,form"
+        />
+         <!-- Menu item to open the Book list -->
+        <menuitem id="menu_library_book_category"
+            name="Books Category"
+            parent="menu_library"
+            action="action_library_book_catetory"
+        />
+
+         <act_window id="action_library_book_report"
+            name="Book Report"
+            res_model="library.book.sqlreport"
+            view_mode="tree,form"
+        />
+        <menuitem id="menu_library_book_report"
+            name="Book Report"
+            parent="menu_library"
+            action="action_library_book_report"
+        />
+    </data>
+</odoo>

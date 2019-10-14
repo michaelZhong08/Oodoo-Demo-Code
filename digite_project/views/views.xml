@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="digite_project.list">
+      <field name="name">digite_project list</field>
+      <field name="model">digite_project.digite_project</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="digite_project.action_window">
+      <field name="name">digite_project window</field>
+      <field name="res_model">digite_project.digite_project</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="digite_project.action_server">
+      <field name="name">digite_project server</field>
+      <field name="model_id" ref="model_digite_project_digite_project"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="digite_project" id="digite_project.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="digite_project.menu_1" parent="digite_project.menu_root"/>
+    <menuitem name="Menu 2" id="digite_project.menu_2" parent="digite_project.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="digite_project.menu_1_list" parent="digite_project.menu_1"
+              action="digite_project.action_window"/>
+    <menuitem name="Server to list" id="digite_project" parent="digite_project.menu_2"
+              action="digite_project.action_server"/>
+    -->
+  </data>
+</odoo>

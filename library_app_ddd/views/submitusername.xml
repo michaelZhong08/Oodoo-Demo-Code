@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="home">
+            <form class="oe_login_form" role="form" action="/myusername/create" method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input type="text" name="username"/>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </template>
+        
+        <template id="ok">
+            <span>hello, <t t-esc="username"/></span>
+        </template>
+        
+        <template id="error">
+            <span>IntegrityError!</span>
+        </template>
+    </data>
+</odoo>

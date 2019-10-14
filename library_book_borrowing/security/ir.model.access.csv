@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_checkout_user,library_app.checkout_User,model_library_checkout,library_app.group_library_user,1,1,1,0
+access_library_checkout_line_user,library_app.checkout_line_User,model_library_checkout_line,library_app.group_library_user,1,1,1,1
+access_library_checkout_manager,library_app.checkout_Manager,model_library_checkout,library_app.group_library_manager,1,1,1,1
+access_library_checkout_stage_user,library_app.checkout_Stage_User,model_library_checkout_stage,library_app.group_library_user,1,0,0,0
+access_library_checkout_stage_manager,library_app.checkout_Stage_Manager,model_library_checkout_stage,library_app.group_library_manager,1,1,1,1

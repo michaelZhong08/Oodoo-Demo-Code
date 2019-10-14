@@ -1,0 +1,10 @@
+<odoo>
+    <act_window id="action_library_checkout"
+        name="Library Checkouts"
+        res_model="library.checkout"
+        view_mode="kanban,tree,form" />
+    <menuitem id="menu_library_checkout"
+        name="Library Checkout"
+        action="action_library_checkout"
+        parent="library_app.menu_library" />
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="assets_backend" name="custom page assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/custom_page/static/src/css/demo.css"/>
+            <script type="text/javascript" src="/custom_page/static/src/js/demo.js"></script>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <menuitem id="menu_todo" name="To do" />
+
+        <!-- Action to open the Book list -->
+        <act_window id="action_todo_main"
+            name="Todo Main Action"
+            res_model="todo.main"
+            view_mode="tree,form"
+        />
+         <!-- Menu item to open the Book list -->
+        <menuitem id="menu_todo_main"
+            name="Todo Main"
+            parent="menu_todo"
+            action="action_todo_main"
+        />
+    </data>
+</odoo>

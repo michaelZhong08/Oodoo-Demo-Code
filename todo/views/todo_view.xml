@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_form_todo_main" model="ir.ui.view">
+            <field name="name">Todo Main Form</field>
+            <field name="model">todo.main</field>
+            <field name="arch" type="xml">
+                <form string="Todo.Main">
+                    <header>
+                        <field name="state"
+                            widget="statusbar"
+                            clickable="True"
+                            statusbar_visible="new,open,done"/>
+                    </header>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="user_id"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="record_date"/>
+                                <field name="completeness"/>
+                            </group>
+                        </group>
+                        <group name="group_top">
+                            <group name="group_col2" col="4" colspan="4">
+                                <notebook>
+                                    <page string="To do Items" name="page_lines">
+                                        <field name="line_ids">
+                                            <tree string="Todo Lines">
+                                                <field name="name"/>
+                                                <field name="finish_date"/>
+                                                <field name="is_done"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_todo_main" model="ir.ui.view">
+            <field name="name">Todo Main List</field>
+            <field name="model">todo.main</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="state=='done'">
+                    <field name="user_id"/>
+                    <field name="record_date"/>
+                    <field name="completeness" widget="progressbar"/>
+                    <field name="state"/>
+                    <button string="Btn" type="object" name="btn_method"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

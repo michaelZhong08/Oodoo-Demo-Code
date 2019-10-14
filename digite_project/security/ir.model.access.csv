@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_digite_project_user,digite_project.digite_project_User,model_digiteproject_project,digite_project.group_digite_project_user,1,1,1,1
+access_digite_project_manager,digite_project.digite_project_Manager,model_digiteproject_project,digite_project.group_digite_project_manager,1,1,1,1
+access_digite_project_stage_user,digite_project.digite_project_stage_User,model_digiteproject_project_stage,digite_project.group_digite_project_user,1,0,0,0

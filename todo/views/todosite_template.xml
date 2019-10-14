@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_common" inherit_id="web.assets_common" name="todo Backend Assets (used in backend interface)">
+        <xpath expr="//script[last()]" position="after">
+            <!--<script type="text/javascript" src="/todo/static/src/js/jsreference.js"></script>-->
+            <script type="text/javascript" src="/todo/static/src/js/myJQ.js"></script>
+        </xpath>
+    </template>
+    <template id="todosite" name="Todo Site Template">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <div class="some-div">some div</div>
+                </div>
+                <div class="row">
+                    <button id="mybtn">A Btn</button>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

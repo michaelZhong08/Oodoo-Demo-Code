@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_form_saleorder_extend" model="ir.ui.view">
+            <field name="name">SO:form extend</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id_1']" position="after">
+                    <field name="digite_pydate" string="digite pydate"/>
+                    <field name="payratio"/>
+                    <field name="paydatespan"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+    <templates xml:space="preserve">
+        <t t-name="HomePageTemplate">
+            <div style="background-color: red;">This is some simple HTML</div>
+        </t>
+    </templates>
+</odoo>
